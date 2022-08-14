@@ -1,9 +1,10 @@
-let btnRef = document.querySelectorAll(".button");
+let btn = document.querySelectorAll(".button");
+let rst = document.querySelectorAll(".restart");
 
 let count = 0;
 let x = true;
 
-btnRef.forEach((element) => {
+btn.forEach((element) => {
   element.addEventListener("click", () => {
     if (x && count%2 != 0) {
       xTurn = false;
@@ -18,3 +19,14 @@ btnRef.forEach((element) => {
     }
   });
 });
+
+const restart = () => {
+    btn.forEach((element) => {
+      element.innerText = "";
+    });
+};
+
+rst.forEach((element) => {
+    element.addEventListener("click", () => restart());
+});
+
